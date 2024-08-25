@@ -1,14 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProductController;
 use App\Http\Controllers\Auth\LoginRegisterController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::resource('products', ProductController::class);
 
 Route::controller(LoginRegisterController::class)->group(function() {
     Route::get('/register', 'register')->name('register');
